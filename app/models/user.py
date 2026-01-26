@@ -63,3 +63,9 @@ class User(Document, UserOut):
         """Get a user by email."""
         return await cls.find_one(cls.email == email)
 
+
+class UserRead(BaseModel):
+    id: int | None = None
+    username: str | None = None
+    email: EmailStr
+
